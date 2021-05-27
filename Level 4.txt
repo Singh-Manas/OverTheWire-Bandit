@@ -1,0 +1,17 @@
+#Level 4
+
+Problem
+	- Find password for next level which is stored in "hidden" file in "inhere" directory
+	- Login into bandit3 using this password via "ssh"
+
+Theory
+	- We can use "ls" command to view directory contents but by default "ls" command doesn't show hidden files.
+	- To show hidden files, we can use "-a" option with "ls" command. This will show all the files including hidden files.
+	- All hidden files start with "."
+
+Solution
+	- First change directory to "inhere" directory using "cd inhere".
+	- Then list all hidden files using "ls -a".
+	- To view contents of the file we use "cat .hidden".
+	- The password for logging into next level is "pIwrPrtPN36QITSp3EQaw936yaFoFgAB".
+	- We can login into next level using "ssh bandit4@bandit.labs.overthewire.org -p 2220" and the given password.
