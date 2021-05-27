@@ -11,6 +11,9 @@ Theory
 	- We can also use cat command to concatenate files.
 	- The syntax to view contents of the file is "cat file_name.extension"
 	- The syntax to concatenate a file is "cat > file_name.extension" 
+	- We can use "cd" command to change directory.
+	- The syntax to use "cd" is "cd directory_name", where directory_name is in the current directory.
+	- We can also use "cd .." to go one step back into the parent directory.
 
 Solution
 	- For viewing contents of "readme" file, we can write "cat readme"
