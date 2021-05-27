@@ -14,6 +14,7 @@ Theory
 	- We can use "cd" command to change directory.
 	- The syntax to use "cd" is "cd directory_name", where directory_name is in the current directory.
 	- We can also use "cd .." to go one step back into the parent directory.
+	- User Names of each level will be according to each level, i.e bandit0 for Level 0, bandit1 for Level 1, and so on.
 
 Solution
 	- For viewing contents of "readme" file, we can write "cat readme"
