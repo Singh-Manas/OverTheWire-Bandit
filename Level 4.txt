@@ -2,7 +2,7 @@
 
 Problem
 	- Find password for next level which is stored in "hidden" file in "inhere" directory
-	- Login into bandit3 using this password via "ssh"
+	- Login into bandit4 using this password via "ssh"
 
 Theory
 	- We can use "ls" command to view directory contents but by default "ls" command doesn't show hidden files.
