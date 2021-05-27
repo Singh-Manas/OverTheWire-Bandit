@@ -1,0 +1,18 @@
+#Level 1
+
+Problem
+	- Find password for next level which is stored in "readme" file in home directory
+	- Login into bandit1 using this password via "ssh"
+	- Default port no for all bandit levels is 2220
+
+Theory
+	- We can use "ls" command to list all the directory contents.
+	- We can cat command to see contents of a file.
+	- We can also use cat command to concatenate files.
+	- The syntax to view contents of the file is "cat file_name.extension"
+	- The syntax to concatenate a file is "cat > file_name.extension" 
+
+Solution
+	- For viewing contents of "readme" file, we can write "cat readme"
+	- The password for logging into next level is "boJ9jbbUNNfktd78OOpsqOltutMc3MY1"
+	- We can login into next level using "ssh bandit1@bandit.labs.overthewire.org -p 2220" and the given password.
