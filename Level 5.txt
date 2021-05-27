@@ -1,0 +1,15 @@
+#Level 5
+
+Problem
+	- Find password for next level which is stored in the only human readable file in "inhere" directory
+	- Login into bandit5 using this password via "ssh"
+
+Theory
+	- We can see the contents of a file starting with "-" using "cat ./-filename"
+
+Solution
+	- First change directory to "inhere" directory using "cd inhere".
+	- We can see that the directory contains 9 files.
+	- So we start seeing one by one which file contain human readable text using "cat ./-filename".
+	- We find that -file07 contains the human readable text i.e password for logging into next level "koReBOKuIDDepwhWk7jZC0RTdopnAYKh".
+	- We can login into next level using "ssh bandit5@bandit.labs.overthewire.org -p 2220" and the given password.
