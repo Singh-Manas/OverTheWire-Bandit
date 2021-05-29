@@ -1,0 +1,29 @@
+#Level 6
+
+Problem
+	- Find password for next level which is stored in a file under the "inhere" directory which has following properties
+		-> Human - readable
+		-> 1033 bytes in size
+		-> not executable
+	- Login into bandit6 using this password via "ssh"
+
+Theory
+	- "Find" command is used to find files and directories and perform subsequent operations on them.
+	- It supports searching by file, folder, name, creation date, modification date, owner and permissions. 
+	- By using the ‘-exec’ other UNIX commands can be executed on files or folders found.
+	- We can use "find" command to find files of specific size and not executable files in the current directory and subdirectories.
+	- The syntax for "find" command is 
+		$ find [where to start searching from] [expression determines what to find] [-options] [what to find]
+		-> To find file of specific size syntax can be written as "find . -size 1033c" where c represents file size in bytes.
+		-> To find files of not executable nature we can write "find . ! -exec".
+	- "File" command is used to determine the type of a file. File may be of 2 types - 
+		-> Human Readable (Ex - ASCII Text)
+		-> MIME Type (Ex - text/plain; charset=us-ascii)
+	- To find file type in a directory, we can write "file *".
+	
+Solution
+	- First we can find files with size 1033 bytes and that are not executable using "find -size 1033c ! -executable"
+	- The above statment will return list of files that has size 1033 bytes and that are not executable.
+	- We can see that there is only one file with size 1033 bytes and not executable.
+	- To check if file is human readable we can write "file inhere/maybehere07/.file2".
+	- To see contents of file we can write "cat inhere/maybehere07/.file2".
