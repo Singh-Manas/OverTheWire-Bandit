@@ -27,3 +27,5 @@ Solution
 	- We can see that there is only one file with size 1033 bytes and not executable.
 	- To check if file is human readable we can write "file inhere/maybehere07/.file2".
 	- To see contents of file we can write "cat inhere/maybehere07/.file2".
+	- The password for logging into next level is "DXjZPULLxYr17uwoI01bNLQbtFemEgo7"
+	- We can login into next level using "ssh bandit6@bandit.labs.overthewire.org -p 2220" and the given password.
