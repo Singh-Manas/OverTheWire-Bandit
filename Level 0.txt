@@ -1,7 +1,9 @@
-#Level 0
+#Level 1
 
-Problem 
-	- Login into the game using given hostname, port no, username and password.
+Problem
+	- Find password for next level which is stored in "readme" file in home directory
+	- Login into bandit1 using this password via "ssh"
+	- Default port no for all bandit levels is 2220
 
 Theory
 	- We can login to a remote host and execute remote commands by using "ssh" [Secure Shell] command.
@@ -9,6 +11,17 @@ Theory
 		$ ssh <username>@<remotehost> 
 	- For specifying port no add "-p 0000", where 0000 is the desired port no.
 	- You will be asked for password once the connection is established. 
-	
+	- We can use "ls" command to list all the directory contents.
+	- We can cat command to see contents of a file.
+	- We can also use cat command to concatenate files.
+	- The syntax to view contents of the file is "cat file_name.extension"
+	- The syntax to concatenate a file is "cat > file_name.extension" 
+	- We can use "cd" command to change directory.
+	- The syntax to use "cd" is "cd directory_name", where directory_name is in the current directory.
+	- We can also use "cd .." to go one step back into the parent directory.
+	- User Names of each level will be according to each level, i.e bandit0 for Level 0, bandit1 for Level 1, and so on.
+
 Solution
-	"ssh bandit0@bandit.labs.overthewire.org -p 2220"
+	- For viewing contents of "readme" file, we can write "cat readme"
+	- The password for logging into next level is "boJ9jbbUNNfktd78OOpsqOltutMc3MY1"
+	- We can login into next level using "ssh bandit1@bandit.labs.overthewire.org -p 2220" and the given password.

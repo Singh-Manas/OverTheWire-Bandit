@@ -1,15 +1,25 @@
-#Level 2
+#Level 3
 
 Problem
-	- Find password for next level which is stored in "-" file in home directory
-	- Login into bandit2 using this password via "ssh"
+	- Find password for next level which is stored in "spaces in this filename" file in home directory
+	- Login into bandit3 using this password via "ssh"
 
 Theory
-	- When we try to use "cat -", it will not work because if we use '-' as an argument in place of a file name it refers to STDIN/STDOUT.
-	- Using "-" as a filename to mean stdin/stdout is a convention that a lot of programs use.
-	- So, if you want to open this type of file, we have to specify the full location of the file such as "cat ./-"
+	- We can see contents of a file using cat command but the problem arises because of space in file name.
+	- When we try to directly write a command and give file name which has spaces as argument, the shell interprets it as multiple arguments not as a single file name.
+	- For Example - When we use "cat spaces in the filename" the shell will interpret it as cat with 4 arguments i.e spaces, in, the, filename. So it will try to open these 4 files not the file with "spaces in the filename".
+	- To fix this we have 2 methods - 
+		(a) Escape Character Method
+			-> We can use escape character of space i.e "\<space>" to convey space in the filename.
+			-> Escape characters have special meaning when used in a character sequence.
+			-> For Example: We can use change directory to "new dir" using cd as "cd new\ dir".
+		(b) Using Double Quotes
+			-> We can also specify filenames by enclosing it in double quotes. This will help us to specify filenames without using escape character.
+			-> For Example: We can use change directory to "new dir" using cd as 'cd "new dir"'.
 
 Solution
-	- Hence to open "-" file, we need to write "cat ./-" in the current directory where file is located.
-	- The password for logging into next level is "CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9"
-	- We can login into next level using "ssh bandit2@bandit.labs.overthewire.org -p 2220" and the given password.
+	- We can see contents of file using "cat spaces\ in\ this\ filename".
+	- We can also see contents using 'cat "spaces in this filename"'.
+	- There is a shortcut for writing filenames with escape charcter by writing few letters of filename and then pressing "Tab". This will automatically insert escape characters at appropriate places in the filename.
+	- The password for logging into next level is "UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK".
+	- We can login into next level using "ssh bandit3@bandit.labs.overthewire.org -p 2220" and the given password.
