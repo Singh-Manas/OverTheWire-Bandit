@@ -1,0 +1,19 @@
+#Level 6
+
+Problem
+	- Find password for next level which is stored somewhere on the server and has following properties
+		-> Owned by user bandit7
+		-> Owned by group bandit6
+		-> 33 bytes in size
+	- Login into bandit7 using this password via "ssh"
+
+Theory
+	- We can use "find" command to find files which satisfy above conditions.
+	- We can use "user" option to find files which belongs to user. Ex - "find . -user username".
+	- We can use "group" option to find files which belongs to group. Ex - "find . -group groupname".
+
+Solution
+	- To find files which satisfy above conditions anywhere on the server, we can use "find / -type f -user bandit7 -group bandit6 -size 33c".
+	- By executing above command, we see there is one file "/var/lib/dpkg/info/bandit7.password" which contains password.
+	- The password for logging into next level is "HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs"
+	- We can login into next level using "ssh bandit7@bandit.labs.overthewire.org -p 2220" and the given password.
