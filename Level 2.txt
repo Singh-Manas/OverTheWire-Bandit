@@ -1,4 +1,4 @@
-#Level 3
+#Level 2
 
 Problem
 	- Find password for next level which is stored in "spaces in this filename" file in home directory

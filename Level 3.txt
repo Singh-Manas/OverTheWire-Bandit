@@ -1,4 +1,4 @@
-#Level 4
+#Level 3
 
 Problem
 	- Find password for next level which is stored in "hidden" file in "inhere" directory
