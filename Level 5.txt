@@ -14,8 +14,9 @@ Theory
 	- We can use "find" command to find files of specific size and not executable files in the current directory and subdirectories.
 	- The syntax for "find" command is 
 		$ find [where to start searching from] [expression determines what to find] [-options] [what to find]
-		-> To find file of specific size syntax can be written as "find . -size 1033c" where c represents file size in bytes.
-		-> To find files of not executable nature we can write "find . ! -exec".
+		-> To find file of specific size in current directory syntax can be written as "find . -size 1033c" where c represents file size in bytes.
+		-> To find files of not executable nature in current directory we can write "find . ! -exec".
+		-> To specify type i.e file or directories to be searched we can specify "type" option. If "type" option is "f" that means find files and if option is "d" find directories.
 	- "File" command is used to determine the type of a file. File may be of 2 types - 
 		-> Human Readable (Ex - ASCII Text)
 		-> MIME Type (Ex - text/plain; charset=us-ascii)
