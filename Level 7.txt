@@ -1,0 +1,20 @@
+#Level 7
+
+Problem
+	- Find password for next level which is stored in "data.txt" next to the word "millionth".
+	- Login into bandit8 using this password via "ssh"
+
+Theory
+	- "grep" stand for "Globally search for Regular Expression and Printout".
+	- The grep filter searches a file for a particular pattern of characters, and displays all lines that contain that pattern. 
+	- The pattern that is searched in the file is referred to as the regular expression.
+	- The syntax for "grep" is - 
+		-> grep [options] pattern [files]
+	- The -i option enables to search for a string case insensitively in the give file. It matches the words like “UNIX”, “Unix”, “unix”. 
+ 		-> $grep -i "UNix" geekfile.txt
+	
+Solution
+	- For finding word "millionth" in the file we can write "grep -i "millionth" data.txt".
+	- It will return the line which contains the word "millionth".
+	- The password for logging into next level is "cvX2JJa4CFALtqS87jk27qwqGhBM9plV".
+	- We can login into next level using "ssh bandit8@bandit.labs.overthewire.org -p 2220" and the given password.
