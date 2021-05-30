@@ -1,0 +1,43 @@
+#Level 8
+
+Problem
+	- Find password for next level which is stored in "data.txt" and is the only line of text that occurs only once.
+	- Login into bandit9 using this password via "ssh".
+
+Theory
+	- "uniq" is a command that helps to detect the adjacent duplicate lines and also deletes the duplicate lines. 
+	- "uniq" filters out the adjacent matching lines from the input file(that is required as an argument) and writes the filtered data to the output file . 
+	- The syntax of "uniq" command is
+		-> $uniq [OPTION] [INPUT]
+	- Option "-u" or "--unique" can be used to print only unique lines.
+	- "sort" command is used to sort a file, arranging the records in a particular order. By default, the sort command sorts file assuming the contents are ASCII.  
+	- The "sort" command has following properties 
+		-> Using options in "sort" command, it can also be used to sort numerically.
+		-> "sort" command sorts the contents of a text file, line by line.
+		-> "sort" is a standard command line program that prints the lines of its input or concatenation of all files listed in its argument list in sorted order.
+		-> The "sort" command is a command line utility for sorting lines of text files. It supports sorting alphabetically, in reverse order, by number, by month and can also remove duplicates.
+		-> The "sort" command can also sort by items not at the beginning of the line, ignore case sensitivity and return whether a file is sorted or not. Sorting is done based on one or more sort keys extracted from each line of input.
+		-> By default, the entire input is taken as sort key. Blank space is the default field separator.
+	- The sort command follows these features as stated below:
+		-> Lines starting with a number will appear before lines starting with a letter.
+		-> Lines starting with a letter that appears earlier in the alphabet will appear before lines starting with a letter that appears later in the alphabet.
+		-> Lines starting with a lowercase letter will appear before lines starting with the same letter in uppercase.
+	- Piping and redirection is the means by which we connect data streams between programs and files to direct data in interesting and useful ways.
+	- Every program we run on the command line automatically has three data streams connected to it.
+		-> STDIN (0) - Standard input (data fed into the program)
+		-> STDOUT (1) - Standard output (data printed by the program, defaults to the terminal)
+		-> STDERR (2) - Standard error (for error messages, also defaults to the terminal)
+	- The greater than operator ( > ) indicates to the command line that we wish the programs output (or whatever it sends to STDOUT) to be saved in a file instead of printed to the screen. Ex - "ls > myoutput".
+	- For appending data to an existing file, we use double greater than operator ( >> ). Ex - "ls >> myoutput".
+	- If we use the less than operator ( < ) then we can send data the other way. We will read data from the file and feed it into the program via it's STDIN stream. Ex - "wc -l < myoutput".
+	- Whenever we use redirection or piping, the data is sent anonymously.
+	- STDERR is stream number 2 and we may use these numbers to identify the streams. If we place a number before the > operator then it will redirect that stream to error stream (if we don't use a number, like we have been doing so far, then it defaults to stream 1). 
+		->Ex - ls -l video.mpg blah.foo 2> errors.txt
+	- Piping operator (|) is used to send data from one program to another program. Ex - "ls | head -3"
+	
+Solution
+	- If we only write "uniq -u data.txt" for finding unique line, it will not work because there can be many lines which are repeated not adjacently but "uniq" only detects adjacent duplicates.
+	- For fixing the problem we need to arrange all the duplicates adjacently. This can be done with help of "sort" command.
+	- Combining both these commands with piping operator will give us the required password. "sort data.txt | uniq -u".
+	- The password for logging into next level is "UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR".
+	- We can login into next level using "ssh bandit9@bandit.labs.overthewire.org -p 2220" and the given password.
